@@ -16,6 +16,55 @@
   <link rel="stylesheet" href="css/mdb.min.css" />
   <!-- Custom styles -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid transparent;
+      background-color: transparent;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: transparent;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: rgb(255, 255, 255, 0.2);
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 0px solid #ccc;
+      border-top: none;
+    }
+
+    .responsive {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -48,7 +97,7 @@
         <div class="collapse navbar-collapse" id="navbarExample01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="./downloads/cronos-amd64-installer.exe">DOWNLOAD</a>
+              <a class="nav-link" aria-current="page" href="./downloads/cronos-amd64-installer.exe">DOWNLOAD CRONOS V1.2.0</a>
             </li>
           </ul>
 
@@ -96,10 +145,51 @@
       <div class="mask">
         <div class="container d-flex align-items-center justify-content-center text-center h-100">
           <div class="text-white">
+            <br></br>
+            <br></br>
+
             <h1 class="mb-3" style="
               margin: 0px; 
             ">CRONOS</h1>
-            <h5 class="mb-4">All your games in one place and keep track of hours played.</h5>
+            <div class="tab">
+              <button class="tablinks" onclick="openCity(event, 'London')" style="color: #ccc;" id="defaultOpen">All
+                Agames</button>
+              <button class="tablinks" onclick="openCity(event, 'Paris')" style="color: #ccc;">Statistics</button>
+              <button class="tablinks" onclick="openCity(event, 'Tokyo')" style="color: #ccc;">HowLongToBeat</button>
+            </div>
+
+            <div id="London" class="tabcontent block">
+              <h5 class="mb-4">All your games in one place</h5>
+
+              <img class="responsive" src="./img/1.jpeg" alt="Italian Trulli" width="800" height="500">
+              <br></br>
+
+              <a class="btn btn-outline-light btn-lg m-2" href="./downloads/cronos-amd64-installer.exe" target="_blank"
+                role="button" href="./downloads/cronos-amd64-installer.exe">DOWNLOAD CRONOS V1.2.0</a>
+            </div>
+
+            <div id="Paris" class="tabcontent">
+              <h5 class="mb-4">Keep track of hours played</h5>
+
+              <img class="responsive" src="./img/2.jpeg" alt="Italian Trulli" width="800" height="500">
+              <br></br>
+
+              <a class="btn btn-outline-light btn-lg m-2" href="./downloads/cronos-amd64-installer.exe" target="_blank"
+                role="button" href="./downloads/cronos-amd64-installer.exe">DOWNLOAD CRONOS V1.2.0</a>
+            </div>
+
+            <div id="Tokyo" class="tabcontent">
+              <h5 class="mb-4">Find out how long to beat a game with howlongtobeat</h5>
+
+              <img class="responsive" src="./img/3.jpeg" alt="Italian Trulli" width="800" height="500">
+              <br></br>
+
+              <a class="btn btn-outline-light btn-lg m-2" href="./downloads/cronos-amd64-installer.exe" target="_blank"
+                role="button" href="./downloads/cronos-amd64-installer.exe">DOWNLOAD CRONOS V1.2.0</a>
+            </div>
+
+            <br></br>
+
             <!-- <a
                 class="btn btn-outline-light btn-lg m-2"
                 href="https://www.youtube.com/watch?v=c9B4TPnak1A"
@@ -108,8 +198,7 @@
                 target="_blank"
                 >Start tutorial</a
               > -->
-            <a class="btn btn-outline-light btn-lg m-2" href="./downloads/cronos-amd64-installer.exe" target="_blank"
-              role="button" href="./downloads/cronos-amd64-installer.exe">DOWNLOAD CRONOS V1.2.0</a>
+
           </div>
         </div>
       </div>
@@ -126,6 +215,25 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Custom scripts -->
   <script type="text/javascript" src="js/script.js"></script>
+
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
 </body>
 
 </html>
